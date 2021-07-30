@@ -1,0 +1,22 @@
+= Slack Alerts
+:last_updated: 07/28/2021
+:experimental:
+:linkattrs:
+
+Review the following video on how to configure Slack alerts.
+
+++++
+<iframe width="560" height="350" src="https://cdn.loom.com/sessions/thumbnails/256e83c925744ad9977e109b3dfd9c6d-00001.mp4" frameborder="1" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+++++
+
+Follow these steps:
+
+. https://slack.com/oauth/authorize?client_id=274525912167.273518441556&scope=files:read,im:history,channels:history,commands,channels:read,users.profile:read,files:write:user,chat:write:bot,users:read,users:read.email,groups:history,mpim:history,im:read,mpim:read,groups:read,bot[Authorize the app^]; ensure that you're signed into your company's Slack account.
+
+. Change the destination to *Slack* by clicking on the current desination; the default is *Sheets*.
++
+image:slack-destination.png[]
+
+. Select the channel where you want the alerts to post.
++
+image:slack-channel.png[]

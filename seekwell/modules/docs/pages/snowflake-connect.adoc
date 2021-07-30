@@ -1,0 +1,61 @@
+= Connect to Snowflake
+:last_updated: 07/27/2021
+:experimental:
+:linkattrs:
+
+. https://app.seekwell.io/[Launch the SeekWell app^]
+
+. Under *Flavor*, select *Snowflake*.
++
+image::snowflake-connect-new-source.png[]
+
+. To connect to to Snowflake with SeekWell, you to enter the following parameters:
++
+[horizontal]
+Account Name::
+Region::
+Warehouse::
+Database::
+Username::
+Password::
+Schema (optional)::
+Role (optional)::
+
+. To find the values of these parameters, you can look at you Snowflake worksheet, as illustrated in the following screenshot:
++
+image::snowflake-worksheet.png[]
+
+. Examine the URL, to find your *Account Name*,  `abcd1234`, and your *Region*, `us-east-1`. If you don't see a region, it means that you are in the default region `us-west-1`.
++
+image::snowflake-url.png[]
+
+. Specify your *Database* and *Warehouse* by clicking the Databases and Warehouses icons.
++
+image::snowflake-select-database.png[]
+
+. To verify your *Username* and *Role*, look at the top right corner of the screen.
++
+image::snowflake-username-role.png[]
+
+== Use your existing JDBC connection string
+
+You can re-use an existing JDBC connection string to connect to Snowflake.
+
+For example, consider the following connection string:
+
+[source]
+----
+jdbc:snowflake://xy12345.eu-central-1.snowflakecomputing.com/?user=peter&warehouse=mywh&db=mydb&schema=public
+----
+
+Here are the values you can use:
+
+[horizontal]
+Account Name:: xy12345
+Region:: eu-central-1 (if this is missing, it means you're in us-west-1)
+Username:: peter
+Warehouse:: mywh
+Database:: mydb
+Schema:: public
+
+

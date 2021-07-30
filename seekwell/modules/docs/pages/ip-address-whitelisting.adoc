@@ -1,0 +1,21 @@
+= Whitelisting our IP address
+:last_updated: 07/27/2021
+:experimental:
+:linkattrs:
+
+For SeekWell to work, you have to whitelist our IP addresses:
+
+[source]
+----
+35.193.207.79 and 35.239.74.213​
+----
+
+Some cloud providers require a `/32` suffix after the IP address.
+
+* SSH
+* AWS
+* Snowflake
+* Google Cloud Platform
+* Microsoft Azure
+* MySQL (manual)
+* Salesforce

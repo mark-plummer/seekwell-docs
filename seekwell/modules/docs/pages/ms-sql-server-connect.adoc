@@ -1,0 +1,30 @@
+= Connect to Microsoft SQL Server (MS SQL)
+:last_updated: 07/27/2021
+:experimental:
+:linkattrs:
+
+== Windows Authentication
+
+Pre-requisite::
+You must whitelist our IP address, as described in xref:ip-address-whitelisting.adoc[].
+
+If you're using Windows Authentication to connect to your database, you must also set up *mixed mode**"** authentication.
+
+For supporting documentation from Microsoft, see theses sources:
+
+* https://docs.microsoft.com/en-us/sql/relational-databases/security/choose-an-authentication-mode?view=sql-server-ver15[Choose an Authentication Mode^]
+* https://docs.microsoft.com/en-us/sql/database-engine/configure-windows/change-server-authentication-mode?view=sql-server-ver15[Change server authentication mode^]
+
+See the docs from Microsoft here and here.
+
+NOTE: You cannot use your Windows login, such as `SOMEDOMAIN\username`. Instead, you must create a new user account that has "mixed mode" enabled.
+
+We recommend that you create a read-only username `seekwell` that you team can share for login purposes. You have to create that user in your own database:
+
+[source]
+----
+CREATE USER Mary WITH PASSWORD = '********';
+----
+
+This approach pre-empts most connection failures when trying to connect with SeekWell. The errors return with an "Adaptive Server connection failed" message.
+

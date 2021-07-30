@@ -1,0 +1,13 @@
+= Working with dates
+:last_updated: 07/28/2021
+:experimental:
+:linkattrs:
+
+If you encounter difficulties formatting dates, especially in *Sheets*, we recommend that you cast date columns to string.
+
+> **Related information**
+>
+> * https://www.mssqltips.com/sqlservertip/1145/date-and-time-conversions-using-sql-server/[SQL Server^]
+> * http://www.sqlines.com/sql-server-to-mysql/functions/convert_string[MySQL^]
+> * https://www.postgresql.org/docs/8.1/functions-formatting.html[Postgres^]
+> * https://docs.snowflake.com/en/sql-reference/functions-conversion.html#date-and-time-formats-in-conversion-functions[Snowflake^]

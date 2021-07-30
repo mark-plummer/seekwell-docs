@@ -1,0 +1,45 @@
+= SQLite
+:last_updated: 07/28/2021
+:experimental:
+:linkattrs:
+
+At SeekWell, we use the SQLite3 database engine when we query CSVs, Sheets, and other Blocks.
+
+Here are a few tips for working with SQLite:
+
+Default column data type::
+Most columns come through as `TEXT` data type by default.
++
+If you know that one of the columns contains data of an `INTEGER` data type, https://www.sqlite.org/lang_expr.html#castexpr[use `CAST` functions to convert it^].
++
+  Example CAST to integer:;;
++
+[source]
+----
+CAST(text_column AS INTEGER) as integer_column
+----
+
+Date and timestamp columns::
+https://www.w3resource.com/sqlite/sqlite-data-types.php[SQLite does not have a storage class^] for storing dates and timestamps.
++
+It conversts most dates to a `TEXT` data type.
+
+Manipulating date columns::
+SQLite does, however, have several functions you can use to manipulate dates. Because it is just `TEXT`, , you can truncate dates using the `SUBSTR` fucntion.
++
+Example convert a timestamp to a month:;;
++
+[source]
+----
+substr('2020-05-21 23:22', 1, 7) as created_on
+
+-- 2020-05
+----
++
+Example get the first and last day of the month:;;
+[source]
+----
+SELECT DATE(
+   'now', 'start of month',
+   '+1 month', '-1 day');
+----

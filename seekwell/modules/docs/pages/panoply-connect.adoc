@@ -1,0 +1,23 @@
+= Connect to Panoply
+:last_updated: 07/27/2021
+:experimental:
+:linkattrs:
+
+You can connect to Panoply very quickly:
+
+. https://app.seekwell.io/[Launch the SeekWell app^]
+
+. Under *Flavor*, select *Redshift*.
++
+image::redshift.png[]
+
+. All Panoply connections have the same host and port:
++
+Host:: `db.panoply.io`
+Port:: 5439
+
+. Find the rest of the connection properties by clicking *BI Connection* in the Panoply navigation.
++
+This displays a window similar to the following:
++
+image::panoply-properties.png[]

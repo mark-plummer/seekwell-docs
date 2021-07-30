@@ -1,0 +1,174 @@
+= Snippets
+:last_updated: 07/28/2021
+:experimental:
+:linkattrs:
+
+Snippets let you share small, reusable bits of SQL with your team.
+
+Watch the following demonsstration of using SeekWell snippets.
+
+++++
+<iframe width="560" height="315" src="https://www.youtube.com/embed/KwUyIdkBPt0" title="YouTube video player" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+++++
+
+[#first-snippet]
+== Creating your first snippet
+
+To create a snippet, use the following combination of keys:
+
+[tabset]
+====
+MacOS::
++
+--
+*Command* + *k* → *Create snippet*
+--
+PC::
++
+--
+*CTRL* + *k* → *Create snippet*
+--
+====
+
+A good use of snippets in SeekWell is for date formats.
+
+Example:: We use the following snippet to create three date formats based on a `timestamp`:
++
+[source]
+----
+date_trunc('day', {{column_name}})::date as "{{alias}}_day",
+
+date_trunc('week', {{column_name}})::date as "{{alias}}_week",
+
+date_trunc('month', {{column_name}})::date as "{{alias}}_month"
+----
++
+image:day-week-month.png[]
+
+After you type double curly brackets, `{{`, SeekWell adds the variable to *Defaults*. Defaults is a good container for commonly used variables, such as `created_on`.
+
+NOTE: Variables are optional. If you don't use variables in your snippet, you have a *static snippet*.
+
+[#navigation]
+== Navigation
+
+=== Create snippets
+To create a snippet, use the following keys:
+
+[tabset]
+====
+MacOS::
++
+--
+*Command* + *k* → *Create snippet*
+--
+PC::
++
+--
+*CTRL* + *k* → *Create snippet*
+--
+====
+
+=== Use snippets
+To use a snippet from a block, use the following keys:
+
+[tabset]
+====
+MacOS::
++
+--
+*Command* + *;* (semicolon)
+--
+PC::
++
+--
+*CTRL* + *;* (semicolon)
+--
+====
+
+=== View, edit, or delete snippets
+
+To view, edit, or delete your snippets, use the following keys:
+
+[tabset]
+====
+MacOS::
++
+--
+*Command* + *k* → *View snippet*
+--
+PC::
++
+--
+*CTRL* + *k* → *View snippet*
+--
+====
+
+image:snippet-navigation.png[]
+
+[#library]
+== Library
+
+SeekWell comes with the following snippet library
+
+[#addSubSelect]
+addSubSelect::
+Tags::: ansi
+SQL definition:::
++
+[source]
+----
+(select
+{{group_by_col}},
+max({{max_col}}) max_{{max_col}}
+from
+{{table}}
+group by 1) as max_{{table}}
+----
+
+[#dayWeekMonth]
+dayWeekMonth::
+Tags::: postgres
+SQL definition:::
++
+[source]
+----
+date_trunc('day', {{column_name}})::date::text as "{{alias}}_day",
+date_trunc('week', {{column_name}})::date::text as "{{alias}}_week",
+date_trunc('month', {{column_name}})::date::text as "{{alias}}_month"
+----
+
+[#addWith]
+addWith::
+Tags::: postgres
+SQL definition:::
++
+[source]
+----
+with {{alias}} as (
+select
+from {{table_name}}
+)
+----
+
+Days between two dates::
+Tags::: postgres
+SQL definition:::
++
+[source]
+----
+now()::date - some_date::date
+----
+
+NOTE: We at SeekWell welcome your suggestions for adding new snippets to our library. Please mailto:contact@seekwell.io[send us an email].
+
+Other resources to jump start
+Postgres date snippets
+MySQL date snippets
+Snowflake date snippets
+
+> **Related information**
+>
+> * https://wiki.postgresql.org/wiki/Date_and_Time_dimensions[Date snippets for Postgres^]
+> * https://dev.mysql.com/doc/refman/5.7/en/date-and-time-functions.html[Date snippets for MySQL^]
+> * https://docs.snowflake.com/en/sql-reference/functions-date-time.html[Date snippets for Snowflake^]

@@ -1,0 +1,326 @@
+= Parameters
+:last_updated: 07/28/2021
+:experimental:
+:linkattrs:
+
+You can use *parameters* to inject data into your SQL statement. You can add plain text, numbers, or inject data from *Sheets* or another block.
+
+[#sheet]
+== Add data from sheets
+
+Watch the following video on how to use sheet parameters.
+
+++++
+<iframe width="560" height="315" src="https://www.youtube.com/embed/d-lJOixrTcM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+++++
+
+. Add a parameter to your SQL.
++
+[source,roomsql]
+----
+select e.*
+from dummy.events AS e
+where 1=1
+and e.email like '%{{email}}%'
+limit 200
+----
+
+. After you add a parameter to your SQL, a *Parameters* section appears in SeekWell.
++
+Select the *Sheets* type.
++
+image::parameters-sheets.png[]
+
+. Select the *Spreadsheet* and *cell* that contains the parameter value you plan to use, through following notation (note examples):
++
+[source]
+----
+<SheetName>!<Column><Row>
+
+Sheet1!A1
+Parameters!C5
+----
++
+[NOTE]
+====
+* You can only use a single cell.
+* To reference multiple cells, use `and` / `or` statements.
+* Postgress and Snowflake connections support multiple cells; see <<list-table,Lists and Tables>>.
+====
+. Run the query.
+
+. Examine the results that are based on your parameters.
+
+[#block]
+== Add data from another block
+
+. Add a parameter to your SQL.
++
+[source,roomsql]
+----
+select e.*
+from dummy.events AS e
+where 1=1
+and e.email like '%{{email}}%'
+limit 200
+----
+
+. After you add a parameter to your SQL, a *Parameterss* section appears in SeekWell.
++
+Select the *Block* type.
++
+image::parameters-block.png[]
+
+. Proceed with specifying the block.
+
+[#list-table]
+== Lists and Tables
+
+TIP: This option is only available for *Postgres* and *Snowflake* connections.
+
+You can also use a Sheet *range*, more than one cell, to generate a SQL list, with a resulting SQL clause is of the type `where some_column in (1, 2, 3)`. To use the list in your query, simply add the parameter. You do not need any punctiation.
+
+Example::
+
+[source]
+----
+select *
+from some_table as d
+where d.some_column in {{vals}}
+----
+
+See the following video on how to use parameter lists:
+
+++++
+<iframe width="560" height="350" src="https://www.loom.com/embed/99932d730759461cabc6e136e7d61020" frameborder="1" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+++++
+
+If you want more power to query a *Sheet*, see xref:sheet-query-sql.adoc[].
+
+[#setting]
+== Setting params in the URL
+
+You can set parameters in the URL to share the links that automatically update these parameters.
+
+Example::
+
+[source]
+----
+https://app.seekwell.io/run/yourreallylonguuid?param1=value1&param2=value2
+----
+
+You can also set parameters for Forms.
+
+Example::
+
+[source]
+----
+https://app.seekwell.io/form/yourreallylonguuid?param1=value1&param2=value2
+----
+
+To get the link with the current parameter values, click the *Share block* link in the top right corner.
+
+image:share-block.png[]]
+
+[#trigger-actions]
+== Trigger actions on load
+
+To ensure that the block runs immediately after the app loads, set the `runOnLoad` parameter to 1:
+
+[source]
+----
+runOnLoad=1
+----
+
+You can also set the `viewNumber` parameter to control when a block loads:
+
+[source]
+----
+?viewNumber=<option>
+----
+
+The options are:
+[horizontal]
+1.:: Split
+2.:: Full screen code
+3.:: Full screen table
+4::: Charts
+
+Example::
+The following link sets the parameter `email` to `jim@seekwell.io`, runs the block, and displays the results on the full screen:
++
+[source]
+----
+https://app.seekwell.io/
+   run/yourblockid?&runOnLoad=1&
+   viewNumber=3&
+   email=jim@seekwell.io
+----
+
+[#drop-down]
+== Creating a dropdown or select parameter
+
+. Create a block with the options you want in the dropdown.
+. Choose the *Select* parameter type.
++
+image:parameters-select.png[]
+
+. Choose the block that you just created, an the column that contains the values you plan to use in the dropdown menu.
++
+++++
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ndzlcyWor4k" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+++++
+
+Alternatively, you can create quickly create a drop down menu with SQLite and the Sheets. CSV, or Block source types:
+
+Example::
+[source,roomsql]
+----
+SELECT *
+   FROM (VALUES ("dog"),("cat"),("bird"))
+   AS a
+----
+
+[#drill-down]
+== Drill Down
+
+The following video demonstrates how to create drill down functionality.
+
+++++
+<iframe width="560" height="350" src="https://www.loom.com/embed/10d6bed59beb4dbfa65feb49de83fb24" frameborder="1" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+++++
+
+. Add a parameter to your select statement.
++
+Example::
++
+[source]
+----
+SELECT {{email}}, r.revenue
+   FROM dummy.revenue AS r
+   WHERE 1=1
+   LIMIT 2
+----
+
+. In the *Parameters* menu, select the *Drill Down* type.
++
+image:parameters-drill-down.png[]
+
+. Insert the SQL that displays and selects the block you want to drill into.
++
+For example, if you select email from a table and want to drill into another block that has an email parameter, your SQL has to contain `email`. The parameter names between the two blocks must match.
++
+image:parameters-match.png[]
+
+. The newly added parameter appears as a link in the results.
++
+When you click that link, it drills into the block you set in the parameter.
++
+image:parameters-drill-into.png[]
+
+[#edit]
+== Editable parameters
+////
+Consider 'dynamic', 'run-time' instead
+////
+
+You can create the *editable* parameter type, which enables you to pass the entire row into another block to perform SQL updates, and to dynamically change the value of the parameter.
+
+The following video demonstrates how to build and use editable parameters.
+
+++++
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ie6xuUw3rYU" title="YouTube video player" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+++++
+
+Consider the following example scenario:
+
+. The `users` table has the columns `plan` and `para`.
++
+image:parameters-table-example.png[]
+
+. Create a block that updates the plan using the  following SQL statement:
++
+[source]
+----
+update dummy.users
+   set plan = '{{plan}}'
+   where email = '{{email}}'
+----
+
+. Add the `{{plan}}` parameter to your `SELECT` statement, choose the `Editable` parameter type, and thenselect the block you just created as the *Update with* block. The *SQL* field contains the SQL statement that gets the current value of `{{plan}}`.
++
+[source]
+----
+select d.email, {{plan}}
+from dummy.users AS d
+order by created_on desc
+limit 100
+----
++
+image:parameters-editable.png[]
+
+. Hover over an editable cell; notice that the background changes to black. You can now change the value.
++
+image:parameters-update-block.png[]
++
+Noptice also the *Save* icon. Click it to run your updated block.
++
+image:parameters-run.png[]
+
+. SeekWell passes the entire row into the update block, so the email in the row you updated is now a parameter in the update block.
++
+Here, the update SQL statement becomes:
++
+[source]
+----
+update dummy.users
+set plan = 'premium'
+where email = 'alan4rk1m0x10crkb7d@somecompany.com'
+----
+
+[#subqueries]
+== Subqueries
+
+With SeekWell, you can add the SQL definition of any block into another block. This enables you to create subqueries (subselect clauses), or CTEs. After you add a subquery, click it to drill down into the child query.
+
+++++
+<iframe width="560" height="315" src="https://www.youtube.com/embed/IqMazian1Ks" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+++++
+
+Consider the following scenario:
+
+. Define the *parent block*:
++
+[source]
+----
+SELECT u.email, u.channel, r.revenue
+FROM dummy.users AS u inner join
+({{revenue}}) as r on u.email = r.email
+WHERE 1=1
+----
+
+. Select the *Subquery* parameter type.
++
+image:parameters-subquery.png[]
+. From the drop down menu, select the block that contains the SQL statement you plan to add.
++
+Here, we use the following *child block*:
++
+[source,roomsql]
+----
+SELECT
+   r.email,
+   sum(revenue) as revenue
+FROM
+   dummy.revenue
+AS r
+WHERE 1=1
+GROUP BY 1
+ORDER BY 2 DESC
+LIMIT 200
+----
+
+[#intercom]
+== Intercom
+
+For details on this type, see xref:intercom.adoc[].
