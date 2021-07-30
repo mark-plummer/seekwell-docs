@@ -1,0 +1,64 @@
+= ThoughtSpot Seekwell Documentation
+:page-layout: home-branch
+
+Welcome to the new ThoughtSpot Seekwell documentation site!
+
+Find topics for the common types of ThoughtSpot users below.
+
+[.conceal-title]
+== {empty}
+++++
+<div class="columns">
+  <div class="box">
+    <img src="_images/persona-business-user.png">
+    <h2>
+      Business User
+    </h2>
+    <p>Tasks for Business Users</p>
+    <ul>
+      <li><a href="https://docs-thoughtspot-com.netlify.app/software/6.0/docs/user-onboarding-experience.html">Onboarding</a></li>
+      <li><a href="https://docs-thoughtspot-com.netlify.app/software/6.0/docs/about-navigating-thoughtspot.html">Finding your way around</a></li>
+      <li><a href="https://docs-thoughtspot-com.netlify.app/software/6.0/docs/about-pinboards.html">Pinboards</a></li>
+      <li><a href="https://docs-thoughtspot-com.netlify.app/software/6.0/docs/about-starting-a-new-search.html">Searches and answers</a></li>
+    </ul>
+    </div>
+  <div class="box">
+    <img src="_images/persona-analyst.png">
+    <h2>
+      Analyst
+    </h2>
+    <p>Tasks for Analysts</p>
+    <ul>
+      <li><a href="https://docs-thoughtspot-com.netlify.app/software/6.0/docs/pinboard-filters.html">Pinboard filters</a></li>
+      <li><a href="https://docs-thoughtspot-com.netlify.app/software/6.0/docs/create-new-relationship.html">Define table joins</a></li>
+      <li><a href="https://docs-thoughtspot-com.netlify.app/software/6.0/docs/worksheets.html">Create worksheets</a></li>
+    </ul>
+    </div>
+  <div class="box">
+    <img src="_images/persona-data-engineer.png">
+    <h2>
+      Data Engineer
+    </h2>
+    <p>Tasks for Engineers</p>
+    <ul>
+      <li><a href="https://docs-thoughtspot-com.netlify.app/software/6.0/docs/embrace-intro.html">About Embrace</a></li>
+      <li><a href="https://docs-thoughtspot-com.netlify.app/software/6.0/docs/embrace-snowflake-add.html">Connect to Snowflake</a></li>
+      <li><a href="https://docs-thoughtspot-com.netlify.app/software/6.0/docs/embrace-redshift-add.html">Connect to Amazon Redshift</a></li>
+      <li><a href="https://docs-thoughtspot-com.netlify.app/software/6.0/docs/embrace-gbq-add.html">Connect to Google BigQuery</a></li>
+      <li><a href="https://docs-thoughtspot-com.netlify.app/software/6.0/docs/embrace-synapse-add.html">Connect to Azure Synapse</a></li>
+    </ul>
+    </div>
+   <div class="box">
+    <img src="_images/persona-it-ops.png">
+    <h2>
+      IT and Operations
+    </h2>
+    <p>Tasks for IT and Operations</p>
+    <ul>
+      <li><a href="https://docs-thoughtspot-com.netlify.app/software/6.0/docs/add-user.html">Managing users</a></li>
+      <li><a href="https://docs-thoughtspot-com.netlify.app/software/6.0/docs/add-group.html">Managing groups</a></li>
+      <li><a href="https://docs-thoughtspot-com.netlify.app/software/6.0/docs/customize-style.html">Customizing style</a></li>
+    </ul>
+    </div>
+ </div>
+++++
