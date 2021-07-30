@@ -1,0 +1,68 @@
+= Send data to Excel
+:last_updated: 07/28/2021
+:experimental:
+:linkattrs:
+
+[#google-drive]
+== Configure Excel with Google Drive
+
+The following video demonstrates to send data from MySQL to Excel on Google Drive.
+
+++++
+<iframe width="560" height="315" src="https://www.youtube.com/embed/KoxswXRqCHo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+++++
+
+Follow these steps:
+
+. Under *Destination*, click *Add destination*, then click *Excel*.
+. Select the spreadsheet from the drop down.
++
+SeekWlell supports `.xlsx` files, and this action shows all files in your Google Drive that have the `.xlsx` extension.
+
+. Enter the name of the *Sheet* where you want to add data.
++
+[NOTE]
+====
+This action replaces the current data in the sheet with the new data.
++
+If you need other data points or formulas on the same Sheet, we recommend that you use two sheets: one for managing the data and the other sheet for formulas or pivot tables thaat reference that data.
+====
+
+. Run the SQL statement.
++
+When the query completes, refresh the file in the Google Drive.
++
+Notice that your new data appears in the sheet
+
+[#one-drive]
+== Configure Excel with OneDrive
+
+NOTE: This feaature is in Beta, by  mailto:contact@seekwell.io[inivitation only^].
+
+The following video demonstrates to send data from MySQL to Excel on OneDrive.
+
+++++
+<iframe width="560" height="315" src="https://www.loom.com/embed/e5e5ce949dca40289dabeddfac4ab868" frameborder="1" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+++++
+
+Follow these steps:
+
+. mailto:contact@seekwell.io[Contact us^] to join our beta program.
+
+. Eensure that you https://seekwell.io/O365_login[authorize the app^].
++
+You must be logged into http://seekwell.io/[seekwell.io^].
+
+. Write you SQL and run it.
++
+Ensure that the results in the app are what you want in Excel.
+
+.Under *Destination*, click *Add destination*, then click *Excel*.
+
+. Select the spreadsheet from the drop down.
++
+SeekWlell supports `.xlsx` files, and this action shows all files in your Google Drive that have the `.xlsx` extension.
+
+. Enter the range using A1 notions, e.g. "Sheet1!A1" (the sheet must already exist)
+Run the query again, the results will be sent to Excel now!
+

@@ -1,0 +1,24 @@
+= Email Alerts
+:last_updated: 07/28/2021
+:experimental:
+:linkattrs:
+
+With SeekWell, you can send query results by email, either from your database or from a Google Sheet. This email contains an HTML preview of the results, a link back to the block, and a CSV file with the query results.
+
+Review the following video on how to configure email alerts.
+
+++++
+<iframe width="560" height="350" src="https://cdn.loom.com/sessions/thumbnails/0b591781cf74425f8a049b0726fc842b-00001.mp4" frameborder="1" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+++++
+
+Follow these steps:
+
+. Change the destination to *Email* by clicking the current destination;the default is *Sheets*.
++
+image:email-destination.png[]
+
+. Enter the email addresses as a comma=separated list, then click the checkmark.
++
+image:email-specify.png[]
+
+.To test that the email is sent, run the query again.

@@ -1,0 +1,67 @@
+Knowledge Base
+
+* Getting Started
+** https://app.seekwell.io/[Launch the app^]
+** xref:docs:ip-address-whitelisting.adoc[Whitelisting SeekWell]
+** xref:docs:ms-sql-server-connect.adoc[]
+** xref:docs:snowflake-connect.adoc[]
+** xref:docs:panoply-connect.adoc[]
+** xref:docs:local-db-connect.adoc[]
+
+* Compose (SQL editor)
+** xref:docs:parameters.adoc[]
+** xref:docs:snippets.adoc[]
+** xref:docs:dates.adoc[]
+** xref:docs:sqlite.adoc[]
+
+* Destinations
+** xref:docs:google-sheets.adoc[]
+** xref:docs:slack-alerts.adoc[]
+** xref:docs: email-alerts.adoc[]
+** Excel
+** Stories
+** Sync data from Google Sheets to SQL
+** Email Lists
+** Blocks as a destination
+** Triggers
+** xref:docs:intercom.adoc[]
+** SalesForce (Destination)
+** Hubspot (Destination)
+** Database (Destination)
+** Import SQL Database to Sheets
+** Enter Manually
+** Facebook
+
+* Sources
+** Database (Source)
+** xref:docs:sheet-query-sql.adoc[]
+** Query blocks
+** Excel (Source)
+** Airtable
+** Query a CSV
+** Salesforce (Source)
+** BigQuery
+
+* Navigation and Organization
+** Tags and Search
+** Shortcuts and Navigation
+
+* More
+** Snowflake External Function
+** Dashboards
+** Forms
+** Sets
+** Tables
+** Google Sheets Add-on
+** Google Forms Add-on
+** Public blocks
+** Python
+** Pivot Tables
+** Roles and Permissions
+** SendGrid
+** SeekWell API
+** Data Processing Agreement (DPA)
+** Granting access through a Service Account
+** sqanything (AlaSQL Chrome Extension)
+** Refresh Google Sheets Data with Apps Script and the SeekWell API
+** Tags and Search

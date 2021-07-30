@@ -1,0 +1,49 @@
+= Send data from SQL to Google Sheets
+:last_updated: 07/28/2021
+:experimental:
+:linkattrs:
+
+The following video demonstrates how to send data to Google Sheets.
+
+++++
+<iframe width="560" height="315" controls src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/7910e42a-b28a-4c13-a47e-b53155049dd1/sqlToSheets4.mp4?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20210728%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20210728T221611Z&X-Amz-Expires=86400&X-Amz-Signature=d75d63a39d6c768a75eae36544380672ec6286b562d8d5bdef44c0946de75706&X-Amz-SignedHeaders=host" type="video/ogg"frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+++++
+
+To send data from SQL to Google sheets, follow these steps:
+
+. Make sure that you xref:web_auth_sheets.adoc[authorized the app^].you've authorized the app here.
+
+. After writting the SQL statement that pulls the data you want, click *Click to edit destination* in the right sidebar.
+
+. Select a *Spreadsheet*, a *Sheet*, and a *Cell*.
++
+If the Sheet doesn't exist, click *add it* so SeekWell creates and inserts the new Sheet.
+
+. Click *Run*.
+
+. To set a schedule, click *Click to set Schedule* after *Repeat*.
+
+[#append]
+== Append data to Google Sheets
+
+Instead of replacing data on insert, you can append new results to Google Sheets by checking the *Append* option.
+
+Review the following video on how to append results to a Google Sheet.
+
+++++
+<iframe width="560" height="350" src="https://cdn.loom.com/sessions/thumbnails/bffd7f79494c476199c42440886e5492-00001.mp4" frameborder="1" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+++++
+
+
+[TIP]
+====
+* You must start your data in cell `A1`.
+* If you need the data from another sheet, use a lookup formula to reference that data.
++
+So, if you daily data starts at `daily!A1`, you must reference `daily` in your dashboard sheet as a formula.
+* You cannot have blank values in the first column.
+* Ensure that the append option ommits column names.
++
+To get all the column names, write data  without the *Append* option the first time, and then copy the column names.
+====
+
