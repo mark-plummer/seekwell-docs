@@ -1,5 +1,7 @@
 site:
-  title: Seekwell Documentation
+  title: ThoughtSpot Seekwell Documentation
+  url: https://seekwell-docs.netlify.app/seekwell
+  start_page: home::index.adoc
 content:
   sources:
   # embedding empty credentials in the URL disables the Edit this Page link for any page created from this repository
