@@ -8,9 +8,6 @@ content:
     branches: HEAD
     start_paths:
       - seekwell/
-  - url: git@github.com:thoughtspot/seekwell-docs.git
-    branches: ['main']
-    start_path: seekwell/
 ui:
   bundle:
     url: ui-bundle/ui2-bundle.zip
