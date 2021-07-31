@@ -4,10 +4,6 @@ site:
 content:
   sources:
   # embedding empty credentials in the URL disables the Edit this Page link for any page created from this repository
-  - url: ./
-    branches: HEAD
-    start_paths:
-      - seekwell/
   - url: git@github.com:thoughtspot/seekwell-docs.git
     branches: ['main']
     start_path: seekwell/
