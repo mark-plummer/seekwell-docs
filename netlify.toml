@@ -9,6 +9,6 @@ command = "node_modules/.bin/antora antora-playbook.yml --stacktrace"
 
 [[redirects]]
   from = "/*"
-  to = "https://seekwell-docs.netlify.app/seekwell/0.0/"
+  to = "/seekwell/0.0/"
   status = 200
   force = true # COMMENT: ensure that we always redirect
